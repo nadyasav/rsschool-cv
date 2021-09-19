@@ -1,9 +1,9 @@
 # Nadezhda Savkova
 ---
 ## CONTACTS:
-### Phone: +375(29)6544845
-### Email: nadyasav28@gmail.com
-### GitHub: https://github.com/nadyasav
+### Phone: ### +375(29)6544845
+### Email: ### nadyasav28@gmail.com
+### GitHub: ### https://github.com/nadyasav
 ## TECHNICAL SKILLS:
 ---
 * HTML
