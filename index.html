@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>CV | nadyasav</title>
+	<title>nadyasav | CV</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
     <header class="header">
     </header>
     <main>
         <section class="main">
-            <div class="wrapper">
-                <div class="main__box">
-                    <div class="main__inner">
+            <div class="wrapper main__box">
+                <div class="main__inner">
+                    <div class="main__title-box">
                         <h1 class="main-title">Nadezhda Savkova</h1>
                         <h2 class="main-subtitle">Junior Web Developer</h2>
                     </div>
@@ -38,10 +40,14 @@
                             </picture>
                         </div>
                         <div class="about-description__box">
-                            I am Junior Web Developer. In current time i work with web projects on freelance. 
-                            I have an analytical type of mind, i have eagernes to work, and learn new technologes. 
-                            My strong personal sides: good communication skills, i am a hard working person, 
-                            able to solve multitasking problems in tense and time-limited schedule.
+                           <p> 
+                               I am Junior Web Developer. In current time i work with web projects on freelance. 
+                                I have an analytical type of mind, i have eagernes to work, and learn new technologes. 
+                            </p>
+                            <p>
+                                My strong personal sides: good communication skills, i am a hard working person, 
+                                able to solve multitasking problems in tense and time-limited schedule.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -52,8 +58,8 @@
                 <div class="languages">
                     <h2 class="languages-title">Languages</h2>
                     <ul class="languages-item__list">
-                        <li class="languages-item__link">English - A2</li>
-                        <li class="languages-item__link">Russian - native</li>
+                        <li class="languages-item__link"><span>English</span> - A2</li>
+                        <li class="languages-item__link"><span>Russian</span> - native</li>
                     </ul>
                 </div>
             </div>
@@ -63,14 +69,14 @@
                 <div class="skills__box">
                     <h2 class="section-title">Technical Skills</h2>
                     <ul class="skills__list">
-                        <li class="skills__link">HTML</li>
-                        <li class="skills__link">CSS</li>
-                        <li class="skills__link">JavaScript</li>
-                        <li class="skills__link">C#</li>
-                        <li class="skills__link">Git</li>
-                        <li class="skills__link">SASS(SCSS)</li>
-                        <li class="skills__link">Figma</li>
-                        <li class="skills__link">Photoshop</li>
+                        <li class="skills__item skills-html">HTML</li>
+                        <li class="skills__item skills-css">CSS</li>
+                        <li class="skills__item skills-js">JavaScript</li>
+                        <li class="skills__item skills-c-sharp">C#</li>
+                        <li class="skills__item skills-git">Git</li>
+                        <li class="skills__item skills-scss">SASS(SCSS)</li>
+                        <li class="skills__item skills-figma">Figma</li>
+                        <li class="skills__item skills-ps">Photoshop</li>
                     </ul>
                 </div>
             </div>
@@ -88,9 +94,6 @@
                                 If no such elements exist, return null.
                             </p>
                         </div>
-                        <code>
-
-                        </code>
                     </div>
                 </div>
             </div>
@@ -101,7 +104,7 @@
                     <h2 class="section-title">Projects</h2>
                     <div class="projects__inner">
                         <div class="project-item">
-                            <a class="project-img__link" href="" alt="">
+                            <a class="project-img__link" href="#">
                                 <picture>
                                     <source class="project-img" type="image/webp" srcset="img/project-img.webp">
                                     <img class="project-img" src="img/project-img.jpg" alt="">
@@ -110,10 +113,10 @@
                             <div class="project__desc">
                                 <h3 class="project-item__title">CV</h3>
                                 <div class="project__text">
-									<p>Maverick - адаптивный лендинг, где я использовала следующие технологии: <span class="tech__bold">HTML</span>, <span class="tech__bold">CSS</span>, <span class="tech__bold">JavaScript</span>, библиотеки(<span class="tech__bold">Slick Slider</span>, <span class="tech__bold">VenoBox</span>, <span class="tech__bold">WOW.js</span>).</p>
+                                    Project description
 								</div>
                                 <div class="project__btn_box">
-                                    <a href="#" class="project__btn" target="_blank">Перейти к проекту</a>
+                                    <a href="#" class="project__btn" target="_blank">Live project</a>
                                 </div>
                             </div>
                         </div>
@@ -122,8 +125,14 @@
             </div>
         </section>
     </main>
-    <footer>
-        
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__box">
+                <a href="https://github.com/nadyasav" class="footer-github-link">https://github.com/nadyasav</a>
+                <p class="footer-copyright">&copy; 2021</p>
+                <a href="https://rs.school/js/" class="rss-logo__box"><img src="img/rs_school_js.svg" class="rss-logo" alt="rsschool-logo"></a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
