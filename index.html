@@ -7,10 +7,34 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="js/highlight/styles/github-dark.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
     <header class="header">
+        <div class="wrapper">
+            <div class="menu-btn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="header__box">
+                <div class="navigation__outer">
+                    <nav class="navigation">
+                        <div class="close-btn">
+                            <div></div>
+                        </div>
+                        <ul class="navigation-list">
+                            <li><a href="#" class="navigation-link">Main</a></li>
+                            <li><a href="#" class="navigation-link">About</a></li>
+                            <li><a href="#" class="navigation-link">Skills</a></li>
+                            <li><a href="#" class="navigation-link">Code Example</a></li>
+                            <li><a href="#" class="navigation-link">Projects</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <section class="main">
@@ -21,9 +45,9 @@
                         <h2 class="main-subtitle">Junior Web Developer</h2>
                     </div>
                     <ul class="main-contact__list">
-                        <li><a class="main-contact__link" href="tel:375296544845">+375(29)6544845</a></li>
-                        <li><a class="main-contact__link" href="mailto:nadyasav28@gmail.com">nadyasav28@gmail.com</a></li>
-                        <li><a class="main-contact__link" href="https://github.com/nadyasav">@nadyasav</a></li>
+                        <li><a class="main-contact__link phone-icon" href="tel:375296544845"><img src="img/phone-icon.png" alt="">+375(29)6544845</a></li>
+                        <li><a class="main-contact__link email-icon" href="mailto:nadyasav28@gmail.com"><img src="img/email-icon.png" alt="">nadyasav28@gmail.com</a></li>
+                        <li><a class="main-contact__link github-icon" href="https://github.com/nadyasav"><img src="img/github-icon.png" alt="">nadyasav</a></li>
                     </ul>
                 </div>
             </div>
@@ -81,7 +105,7 @@
                 </div>
             </div>
         </section>
-        <section class="code-example">
+       <section class="code-example">
             <div class="wrapper">
                 <div class="code-example__box">
                     <h2 class="section-title">Code Example</h2>
@@ -94,6 +118,56 @@
                                 If no such elements exist, return null.
                             </p>
                         </div>
+                        <div class="code-ex__box">
+                            <pre class="code-ex">
+                                <code class="language-csharp hljs">
+                                    public static int? FindArrayIndex(double[] array, double accuracy)
+                                    {
+                                        if (array != null)
+                                        {
+                                            if (array.Length != 0)
+                                            {
+                                                if (accuracy &gt; 0 &amp;&amp; accuracy &lt; 1)
+                                                {
+                                                    double sumleft = array[0];
+                                                    double sumright = 0;
+                                                    int? index = null;
+    
+                                                    for (int i = 2; i &lt; array.Length; i++)
+                                                    {
+                                                        sumright += array[i];
+                                                    }
+    
+                                                    for (int i = 1; i &lt; array.Length - 1; i++)
+                                                    {
+                                                        if (Math.Abs(sumleft - sumright) &lt;= accuracy)
+                                                        {
+                                                            index = i;
+                                                            return index;
+                                                        }
+                                                        sumleft += array[i];
+                                                        sumright -= array[i + 1];
+                                                    }
+                                                    return index;
+                                                }
+                                                else
+                                                {
+                                                    throw new ArgumentOutOfRangeException();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                throw new ArgumentException();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            throw new ArgumentNullException();
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,7 +178,7 @@
                     <h2 class="section-title">Projects</h2>
                     <div class="projects__inner">
                         <div class="project-item">
-                            <a class="project-img__link" href="#">
+                            <a class="project-img__link" href="https://nadyasav.github.io/rsschool-cv/">
                                 <picture>
                                     <source class="project-img" type="image/webp" srcset="img/project-img.webp">
                                     <img class="project-img" src="img/project-img.jpg" alt="">
@@ -113,10 +187,10 @@
                             <div class="project__desc">
                                 <h3 class="project-item__title">CV</h3>
                                 <div class="project__text">
-                                    Project description
+                                    <p>CV - responsive landing page. Technologes: <span class="tech__bold">HTML</span>, <span class="tech__bold">CSS</span>, <span class="tech__bold">JavaScript</span>, library(<span class="tech__bold">highlight.js</span>).</p>
 								</div>
                                 <div class="project__btn_box">
-                                    <a href="#" class="project__btn" target="_blank">Live project</a>
+                                    <a href="https://nadyasav.github.io/rsschool-cv/" class="project__btn" target="_blank">Live project</a>
                                 </div>
                             </div>
                         </div>
@@ -128,11 +202,17 @@
     <footer class="footer">
         <div class="wrapper">
             <div class="footer__box">
-                <a href="https://github.com/nadyasav" class="footer-github-link">https://github.com/nadyasav</a>
-                <p class="footer-copyright">&copy; 2021</p>
-                <a href="https://rs.school/js/" class="rss-logo__box"><img src="img/rs_school_js.svg" class="rss-logo" alt="rsschool-logo"></a>
+                <a href="https://github.com/nadyasav" class="footer-item footer-github-link">
+                    <img class="footer-github__icon" src="img/github-icon.png" alt="">
+                </a>
+                <p class="footer-item footer-copyright">&copy; 2021</p>
+                <a href="https://rs.school/js/" class="footer-item rss-logo__box"><img src="img/rs_school_js.svg" class="rss-logo" alt="rsschool-logo"></a>
             </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
+    <script src="js/highlight/highlight.js"></script>
+    <script src="js/highlight/languages/csharp.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
