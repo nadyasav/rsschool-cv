@@ -50,6 +50,7 @@ html{
     box-sizing: border-box;
     height: 100%;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 body{
     font-family: 'Open Sans', sans-serif;
@@ -224,7 +225,7 @@ section.main{
     max-width: 100%;
 }
 .about-description__box{
-    padding: 40px 0 40px 40px;
+    padding-bottom: 40px;
     font-size: 20px;
     line-height: 1.6;
     text-align: left;
@@ -461,7 +462,7 @@ section.main{
 
 @media only screen and (max-width: 900px){
     .about-description__box {
-        padding: 0 0 20px 20px;
+        padding-bottom: 20px;
         line-height: 1.4;
     }
     code{
