@@ -485,30 +485,42 @@ section.main{
         padding: 0 20px;
     }
     .header__box{
-        top: -20%;
+        top: 0;
         position: fixed;
-        width: 310px;
+        width: 320px;
+        overflow: hidden;
+        z-index: 3;
+        left: -320px;
+        transition: ease-out 0.3s;
+        height: 100vh;
+    }
+    .header__inner{
+        position: relative;
+    }
+    .header__inner::before{
+        position: absolute;
+        content: "";
         height: 140%;
+        width: 310px;
+        top: 50%;
+        transform: translateY(-50%);
         background-color: #484848;
         border-radius: 0 100% 100% 0;
         -webkit-box-shadow: 32px 1px 10px -30px rgb(35 35 35 / 88%);
         box-shadow: 32px 1px 10px -30px rgb(35 35 35 / 88%);
-        z-index: 3;
-        left: -320px;
-        padding-top: 20%;
-        transition: ease-out 0.3s;
-        min-height: 100vh;
     }
     .header__box.active{
         left: 0;
     }
     .navigation{
-        height: 100vh;
+        min-height: 100%;
         padding: 20px;
     }
     .navigation__outer{
-        min-height: 100%;
+        width: 260px;
+        height: 100vh;
         overflow: auto;
+        position: relative;
     }
     .navigation-list{
         min-height: 100%;
@@ -520,14 +532,13 @@ section.main{
         margin: 30px 0 0 0;
     }
     .close-btn{
-        margin-top: 50px;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         display: block;
     }
     .close-btn div{
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         position: relative;
         cursor: pointer;
         z-index: 10;
@@ -538,7 +549,7 @@ section.main{
         background: #b7b7b7;
         display: block;
         height: 3px;
-        width: 50px;
+        width: 30px;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -550,7 +561,7 @@ section.main{
         background: #b7b7b7;
         display: block;
         height: 3px;
-        width: 50px;
+        width: 30px;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
