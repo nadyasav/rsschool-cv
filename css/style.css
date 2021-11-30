@@ -50,12 +50,14 @@ html{
     box-sizing: border-box;
     height: 100%;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 body{
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     font-weight: 400;
     color: #363636;
+    min-width: 320px;
 }
 *, *::before, *::after{
     box-sizing: inherit;
@@ -224,7 +226,7 @@ section.main{
     max-width: 100%;
 }
 .about-description__box{
-    padding: 40px 0 40px 40px;
+    padding-bottom: 40px;
     font-size: 20px;
     line-height: 1.6;
     text-align: left;
@@ -342,7 +344,7 @@ section.main{
     max-width: 555px;
     height: 453px;
     width: 100%;
-    padding: 40px 40px 80px 40px;
+    padding: 40px 40px 60px 40px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -350,6 +352,11 @@ section.main{
     -webkit-box-shadow: -1px 2px 19px -2px rgb(0 0 0 / 75%);
     -moz-box-shadow: -1px 2px 19px -2px rgba(0,0,0,0.75);
     box-shadow: -1px 2px 19px -2px rgb(0 0 0 / 75%);
+}
+.project__desc-inner{
+    position: relative;
+    height: 100%;
+    padding-bottom: 40px;
 }
 .project-item__title{
     display: inline-block;
@@ -373,7 +380,7 @@ section.main{
 }
 .project__btn_box{
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
 }
 .project__btn{
     font-size: 20px;
@@ -461,7 +468,7 @@ section.main{
 
 @media only screen and (max-width: 900px){
     .about-description__box {
-        padding: 0 0 20px 20px;
+        padding-bottom: 20px;
         line-height: 1.4;
     }
     code{
@@ -469,45 +476,69 @@ section.main{
     }
 }
 @media only screen and (max-width: 768px){
+    .project-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project__desc {
+        max-height: 400px;
+        height: auto;
+        z-index: 5;
+        position: relative;
+        transform: translateY(-30%);
+        padding: 20px 20px 40px 20px;
+    }
+    .project__text{
+        height: 200px;
+    }
     .code-ex__box{
         margin: 0 auto;
         max-width: 500px;
-        overflow-x: scroll;
     }
     section{
         padding: 50px 0;
-    }
-    .section-title{
-        margin-bottom: 50px;
     }
     .wrapper {
         padding: 0 20px;
     }
     .header__box{
-        top: -20%;
+        top: 0;
         position: fixed;
-        width: 310px;
+        width: 320px;
+        overflow: hidden;
+        z-index: 3;
+        left: -320px;
+        transition: ease-out 0.3s;
+        height: 100vh;
+    }
+    .header__inner{
+        position: relative;
+    }
+    .header__inner::before{
+        position: absolute;
+        content: "";
         height: 140%;
+        width: 310px;
+        top: 50%;
+        transform: translateY(-50%);
         background-color: #484848;
         border-radius: 0 100% 100% 0;
         -webkit-box-shadow: 32px 1px 10px -30px rgb(35 35 35 / 88%);
         box-shadow: 32px 1px 10px -30px rgb(35 35 35 / 88%);
-        z-index: 3;
-        left: -320px;
-        padding-top: 20%;
-        transition: ease-out 0.3s;
-        min-height: 100vh;
     }
     .header__box.active{
         left: 0;
     }
     .navigation{
-        height: 100vh;
+        min-height: 100%;
         padding: 20px;
     }
     .navigation__outer{
-        min-height: 100%;
+        width: 260px;
+        height: 100vh;
         overflow: auto;
+        position: relative;
     }
     .navigation-list{
         min-height: 100%;
@@ -519,14 +550,13 @@ section.main{
         margin: 30px 0 0 0;
     }
     .close-btn{
-        margin-top: 50px;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         display: block;
     }
     .close-btn div{
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         position: relative;
         cursor: pointer;
         z-index: 10;
@@ -537,7 +567,7 @@ section.main{
         background: #b7b7b7;
         display: block;
         height: 3px;
-        width: 50px;
+        width: 30px;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -549,7 +579,7 @@ section.main{
         background: #b7b7b7;
         display: block;
         height: 3px;
-        width: 50px;
+        width: 30px;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -594,23 +624,18 @@ section.main{
         padding: 0;
     }
     .section-title{
+        margin-bottom: 40px;
         font-size: 30px;
     }
-    .project__desc {
-        top: 40%;
-        right: 50%;
-        padding: 20px;
-        transform: translateX(50%);
-    }
-    .project__desc {
-        height: 400px;
-    }
-    .projects{
-        padding-bottom: 300px;
+    .about{
+        margin-top: 20px;
     }
 }
 @media only screen and (max-width: 500px){
     code {
         font-size: 12px;
+    }
+    .project__desc{
+        transform: translateY(-10%);
     }
 }

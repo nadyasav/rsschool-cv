@@ -15,13 +15,11 @@
     function menuOpen(){
         //ShowMenu
         menu.classList.add('active');
-        burgerMenuBtn.classList.add('active');
         document.getElementsByTagName("body")[0].style.overflow = "hidden";
     }
 
     function closeMenu(){
         //HideMenu
         menu.classList.remove('active');
-        burgerMenuBtn.classList.remove('active');
         document.getElementsByTagName("body")[0].style.overflow = "auto";
     }
